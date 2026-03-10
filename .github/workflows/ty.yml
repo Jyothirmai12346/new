@@ -1,0 +1,31 @@
+name: Arithmetic Operations Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      number1:
+        description: "Enter first number"
+        required: true
+      number2:
+        description: "Enter second number"
+        required: true
+      operation:
+        description: "Choose operation (add/sub/mul)"
+        required: true
+
+jobs:
+  run-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Run Python Script
+        run: |
+          python arithmetic.py ${{ github.event.inputs.number1 }} ${{ github.event.inputs.number2 }} ${{ github.event.inputs.operation }}
