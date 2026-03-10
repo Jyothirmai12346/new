@@ -4,7 +4,7 @@ num1 = int(sys.argv[1])
 num2 = int(sys.argv[2])
 operation = sys.argv[3]
 
-result = 
+result = 0
 if operation == "add":
     result = num1 + num2
 elif operation == "sub":
