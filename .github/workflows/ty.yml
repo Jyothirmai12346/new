@@ -27,5 +27,4 @@ jobs:
           python-version: '3.x'
 
       - name: Run Python Script
-        run: |
-          python python.py ${{ github.event.inputs.number1 }} ${{ github.event.inputs.number2 }} ${{ github.event.inputs.operation }}
+        run:  python python.py ${{ github.event.inputs.number1 }} ${{ github.event.inputs.number2 }} ${{ github.event.inputs.operation }}
